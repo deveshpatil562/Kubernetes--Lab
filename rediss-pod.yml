@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod
+  labels:
+    app: redis
+    environment: Production
+    team: PAAS 
+
+spec:
+  containers:
+    - name: redis-pod
+      image: redis:latest
+      
