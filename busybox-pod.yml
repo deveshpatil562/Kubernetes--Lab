@@ -1,12 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: busybox-pod
+  name: busybox-env
   labels:
     app: busybox
 
 spec:
   containers:
-    - name: busybox-pod
+    - name: busybox
       image: busybox:latest
-      command: ["sh", "-c", "echo Hello from busybox && sleep 3600"]
+      command: ["sh", "-c", "env"]
+      envFrom:
+        - configMapRef:
+            name: app-config
+  restartPolicy: Never
