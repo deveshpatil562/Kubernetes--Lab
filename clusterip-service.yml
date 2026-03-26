@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: web-app-clusterip
 spec:
+  clusterIP: None
   type: ClusterIP
   selector:
     app: web-app
